@@ -1,0 +1,23 @@
+.keypress {
+  border: 1rem solid pink;
+  font-size: 2rem;
+  height: 4rem;
+  width: 10rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 4rem;
+  margin-top: 0.5rems;
+}
+
+.key {
+  border: 0.2rem solid black;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 2rem;
+}
+
+.key--pristine {
+  background-color: grey;
+}
