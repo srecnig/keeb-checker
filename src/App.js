@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useEventListener from "@use-it/event-listener";
-import { setActive } from "./actions";
+import { setKey, resetKey } from "./actions";
 import { Ansi } from "./constants";
 
 import "./App.css";
@@ -15,7 +15,7 @@ const useDetectKeypress = () => {
   });
 
   useEventListener("keyup", ({ code, key }) => {
-    dispatch(setActive(code));
+    dispatch(setKey(code));
     setKeyPress([null, null]);
   });
 
@@ -31,15 +31,21 @@ function KeyPress({ code, value }) {
   );
 }
 
-function Key({ label, size = 1, status = "pristine" }) {
+function Key({ code, label, size = 1, status = "pristine" }) {
+  const dispatch = useDispatch();
   const className = `key key--${status}`;
-  return <div className={className}>{label}</div>;
+  return (
+    <div className={className} onClick={() => dispatch(resetKey(code))}>
+      {label}
+    </div>
+  );
 }
 
 function App() {
   const [code, key] = useDetectKeypress();
   const keys = useSelector((store) => store.keys);
   const keyboard = Object.entries(keys).map(([code, status]) => ({
+    code: code,
     key: code,
     label: Ansi[code],
     status: status,
@@ -50,7 +56,12 @@ function App() {
       <KeyPress code={code} value={key} />
       <hr />
       {keyboard.map((key) => (
-        <Key key={key.key} label={key.label} status={key.status} />
+        <Key
+          key={key.key}
+          code={key.code}
+          label={key.label}
+          status={key.status}
+        />
       ))}
     </div>
   );
