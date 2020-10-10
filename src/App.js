@@ -1,26 +1,29 @@
-import React from 'react';
-import { useState } from 'react';
-import useEventListener from '@use-it/event-listener';
+import React, { useState } from "react";
 
-import './App.css';
+import useEventListener from "@use-it/event-listener";
 
-function App() {
-  const [code, key] = useKeyDown();
-
-  return (
-    <div className="App">OHAI MARK: ({code}, {key})
-    </div>
-  );
-}
+import "./App.css";
 
 const useKeyDown = () => {
   const [keyPress, setKeyPress] = useState(["", ""]);
 
-  useEventListener('keydown', ({ code, key }) => {
+  useEventListener("keydown", ({ code, key }) => {
     setKeyPress([code, key]);
   });
 
   return keyPress;
 };
+
+function App() {
+  const [code, key] = useKeyDown();
+
+  return (
+    <div className="App">
+      <p>
+        OHAI MARK: {code},{key}
+      </p>
+    </div>
+  );
+}
 
 export default App;
