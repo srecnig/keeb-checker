@@ -9,28 +9,6 @@
   margin-top: 0.5rems;
 }
 
-.key {
-  border: 0.2rem solid black;
-  height: 2rem;
-  width: 2rem;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 2rem;
-  margin: 0.2rem;
-}
-
-.key--pristine {
-  background-color: white;
-}
-
-.key--reset {
-  background-color: lightgray;
-}
-
-.key--working {
-  background-color: lightgreen;
-}
-
-.key--active {
-  background-color: yellow;
+.keyboard__row {
+  display: flex;
 }

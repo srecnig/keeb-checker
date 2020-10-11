@@ -1,0 +1,38 @@
+.key {
+  border: 0.2rem solid black;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 2rem;
+  margin: 0.2rem;
+}
+
+.key--1U {
+  width: 2rem;
+}
+.key--1_5U {
+  width: 3rem;
+}
+.key--1_75U {
+  width: 3.5rem;
+}
+.key--2U {
+  width: 4rem;
+}
+
+.key--pristine {
+  background-color: white;
+}
+
+.key--reset {
+  background-color: lightgray;
+}
+
+.key--working {
+  background-color: lightgreen;
+}
+
+.key--active {
+  background-color: yellow;
+}

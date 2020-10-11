@@ -1,40 +1,37 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useDetectKeypress, Ansi } from "components/App";
-import Key from "components/Key";
+import { useDetectKeypress, Layouts, resetKeysPristine } from "components/App";
+import KeyRow from "components/KeyRow";
 import KeyPress from "components/KeyPress";
-
-import {  } from "react-redux";
-import { resetKeysPristine } from "components/App/actions";
 
 import "./style.css";
 
 export function KeebChecker() {
   const [code, key] = useDetectKeypress();
   const keys = useSelector((store) => store.keys);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const keyboard = Object.entries(keys).map(([code, status]) => ({
-    code: code,
-    key: code,
-    label: Ansi[code],
-    status: status,
-  }));
+  const keyboard = Layouts.ANSI.map((row) =>
+    row.map(({ keyCode, size, label }) => ({
+      key: keyCode,
+      keyCode: keyCode,
+      label: label,
+      size: size,
+      status: keys[keyCode],
+    }))
+  );
 
   return (
     <React.Fragment>
       <KeyPress code={code} value={key} />
       <hr />
-      {keyboard.map((key) => (
-        <Key
-          key={key.key}
-          code={key.code}
-          label={key.label}
-          status={key.status}
-        />
+      {keyboard.map((keys) => (
+        <KeyRow key={keys[0].keyCode} keys={keys} />
       ))}
-            <hr />
-    <button onClick={() => dispatch(resetKeysPristine())}>RESET ALL KEYSs</button>
+      <hr />
+      <button onClick={() => dispatch(resetKeysPristine())}>
+        RESET ALL KEYSs
+      </button>
     </React.Fragment>
   );
 }

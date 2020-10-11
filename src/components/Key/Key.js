@@ -2,12 +2,18 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { resetKey } from "components/App/actions";
 
-export function Key({ code, label, size = 1, status = "pristine" }) {
+import "./style.css";
+
+export function Key({ keyCode, label, size = "1U", status = "pristine" }) {
   const dispatch = useDispatch();
-  const className = `key key--${status}`;
+  const className = `key key--${status} key--${convertSizeToClass(size)}`;
   return (
-    <div className={className} onClick={() => dispatch(resetKey(code))}>
+    <div className={className} onClick={() => dispatch(resetKey(keyCode))}>
       {label}
     </div>
   );
+}
+
+function convertSizeToClass(size) {
+  return size.replace(".", "_");
 }
