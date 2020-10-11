@@ -1,15 +1,17 @@
 .key {
-  border: 0.2rem solid black;
+  box-sizing: border-box;
+  border: 0.1rem solid black;
   height: 2rem;
-  width: 2rem;
   text-align: center;
   vertical-align: middle;
-  line-height: 2rem;
-  margin: 0.2rem;
+  line-height: 1.8rem;
 }
 
 .key--1U {
   width: 2rem;
+}
+.key--1_25U {
+  width: 2.5rem;
 }
 .key--1_5U {
   width: 3rem;
@@ -20,19 +22,28 @@
 .key--2U {
   width: 4rem;
 }
+.key--2_25U {
+  width: 4.5rem;
+}
+.key--2_5U {
+  width: 5rem;
+}
+.key--2_75U {
+  width: 5.5rem;
+}
+.key--6_25U {
+  width: 12.5rem;
+}
 
 .key--pristine {
   background-color: white;
 }
-
 .key--reset {
   background-color: lightgray;
 }
-
 .key--working {
   background-color: lightgreen;
 }
-
 .key--active {
   background-color: yellow;
 }

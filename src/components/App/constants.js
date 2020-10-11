@@ -70,4 +70,8 @@ export const KeyCodes = Object.freeze({
   MetaRight: "MetaRight",
   AltRight: "AltRight",
   ControlRight: "ControlRight",
+  // ISO keys
+  // tbd
+  // Other
+  Fn: "Fn", // actually inaccessible from the browser
 });
