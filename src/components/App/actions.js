@@ -18,3 +18,9 @@ export function resetKey(keyCode) {
     keyCode: keyCode,
   };
 }
+
+export function resetKeysPristine() {
+  return {
+    type: "RESET_PRISTINE",
+  };
+}
