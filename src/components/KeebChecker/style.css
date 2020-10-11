@@ -28,9 +28,9 @@
 }
 
 .key--working {
-  background-color: green;
+  background-color: lightgreen;
 }
 
 .key--active {
-  background-color: lightgreen;
+  background-color: yellow;
 }

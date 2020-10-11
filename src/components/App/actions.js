@@ -1,6 +1,13 @@
-export function setKey(keyCode) {
+export function setKeyActive(keyCode) {
   return {
-    type: "SET_KEY",
+    type: "SET_KEY_ACTIVE",
+    keyCode: keyCode,
+  };
+}
+
+export function setKeyWorking(keyCode) {
+  return {
+    type: "SET_KEY_WORKING",
     keyCode: keyCode,
   };
 }

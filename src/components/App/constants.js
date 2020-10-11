@@ -2,6 +2,7 @@ export const KeyStatus = Object.freeze({
   ACTIVE: "active",
   PRISTINE: "pristine",
   RESET: "reset",
+  WORKING: "working",
 });
 
 export const KeyCodes = Object.freeze({

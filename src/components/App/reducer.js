@@ -11,11 +11,18 @@ export function reducer(state = initialState, action) {
   console.log("reducer", state, action);
 
   switch (action.type) {
-    case "SET_KEY":
+    case "SET_KEY_ACTIVE":
       return {
         keys: {
           ...state.keys,
           [action.keyCode]: KeyStatus.ACTIVE,
+        },
+      };
+    case "SET_KEY_WORKING":
+      return {
+        keys: {
+          ...state.keys,
+          [action.keyCode]: KeyStatus.WORKING,
         },
       };
     case "RESET_KEY":
