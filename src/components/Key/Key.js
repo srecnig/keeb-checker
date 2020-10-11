@@ -6,7 +6,7 @@ import "./style.css";
 
 export function Key({ keyCode, label, size = "1U", status = "pristine" }) {
   const dispatch = useDispatch();
-  const className = `key key--${status} key--${convertSizeToClass(size)}`;
+  const className = `key key--${status} element--${convertSizeToClass(size)}`;
   return (
     <div className={className} onClick={() => dispatch(resetKey(keyCode))}>
       {label}

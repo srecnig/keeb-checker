@@ -6,6 +6,20 @@ export const KeyStatus = Object.freeze({
 });
 
 export const KeyCodes = Object.freeze({
+  Escape: "Escape",
+  F1: "F1",
+  F2: "F2",
+  F3: "F3",
+  F4: "F4",
+  F5: "F5",
+  F6: "F6",
+  F7: "F7",
+  F8: "F8",
+  F9: "F9",
+  F10: "F10",
+  F11: "F11",
+  F12: "F12",
+  //
   Backquote: "Backquote",
   Digit1: "Digit1",
   Digit2: "Digit2",
@@ -71,7 +85,37 @@ export const KeyCodes = Object.freeze({
   AltRight: "AltRight",
   ControlRight: "ControlRight",
   // ISO keys
-  // tbd
+  // TODO
   // Other
   Fn: "Fn", // actually inaccessible from the browser
+  PrintScreen: "PrintScreen",
+  ScrollLock: "ScrollLock",
+  Pause: "Pause",
+  Insert: "Insert",
+  Home: "Home",
+  PageUp: "PageUp",
+  Delete: "Delete",
+  End: "End",
+  PageDown: "PageDown",
+  ArrowUp: "ArrowUp",
+  ArrowLeft: "ArrowLeft",
+  ArrowRight: "ArrowRight",
+  ArrowDown: "ArrowDown",
+  NumLock: "NumLock",
+  NumpadDivide: "NumpadDivide",
+  NumpadMultiply: "NumpadMultiply",
+  NumpadSubtract: "NumpadSubtract",
+  Numpad7: "Numpad7",
+  Numpad8: "Numpad8",
+  Numpad9: "Numpad9",
+  NumpadAdd: "NumpadAdd",
+  Numpad4: "Numpad4",
+  Numpad5: "Numpad5",
+  Numpad6: "Numpad6",
+  Numpad1: "Numpad1",
+  Numpad2: "Numpad2",
+  Numpad3: "Numpad3",
+  NumpadEnter: "NumpadEnter",
+  Numpad0: "Numpad0",
+  NumpadDecimal: "NumpadDecimal",
 });

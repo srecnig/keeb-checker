@@ -15,7 +15,11 @@ export function reducer(state = initialState, action) {
     case "SET_KEY_WORKING":
       return updateInState(state, action.keyCode, KeyStatus.WORKING);
     case "RESET_KEY":
-      return updateInState(state, action.keyCode, KeyStatus.RESET);
+      if (state.keys[action.keyCode] === KeyStatus.WORKING) {
+        return updateInState(state, action.keyCode, KeyStatus.RESET);
+      } else {
+        return state;
+      }
     case "RESET_PRISTINE":
       return {
         ...state,
