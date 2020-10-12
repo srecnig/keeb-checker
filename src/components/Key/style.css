@@ -1,21 +1,35 @@
 .key {
   box-sizing: border-box;
-  outline: 0.1rem solid red;
   height: 4rem;
   text-align: center;
   vertical-align: middle;
-  line-height: 3.8rem;
+  margin-bottom: 0.3rem;
 }
 
-.key--pristine {
+.key__inner {
+  position: relative;
+  top: 0rem;
+  border: 0.1rem solid blue;
+  border-radius: 0.4rem;
+  margin: 0.2rem;
+  line-height: 3.4rem;
+  box-shadow: 0rem 0.3rem 0rem blue;
+  transition: All 50ms ease;
+}
+
+.key__inner--pristine {
   background-color: white;
 }
-.key--reset {
+.key__inner--reset {
   background-color: lightgray;
 }
-.key--working {
+.key__inner--working {
   background-color: lightgreen;
 }
-.key--active {
-  background-color: yellow;
+.key__inner--active {
+  /*background-color: yellow;*/
+  position: relative;
+  top: 0.3rem;
+  box-shadow: none !important;
+  transition: All 50ms ease;
 }

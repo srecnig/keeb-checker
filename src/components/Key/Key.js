@@ -6,10 +6,11 @@ import "./style.css";
 
 export function Key({ keyCode, label, size = "1U", status = "pristine" }) {
   const dispatch = useDispatch();
-  const className = `key key--${status} element--${convertSizeToClass(size)}`;
+  const boxClass = `key element--${convertSizeToClass(size)}`;
+  const keyClass = `key__inner key__inner--${status}`;
   return (
-    <div className={className} onClick={() => dispatch(resetKey(keyCode))}>
-      {label}
+    <div className={boxClass} onClick={() => dispatch(resetKey(keyCode))}>
+      <div className={keyClass}>{label}</div>
     </div>
   );
 }
