@@ -1,6 +1,6 @@
 ## keeb checker
 
-this is still a work-in-progress. use this to test out your keyboard, or your PCB. currently this only supports only ANSI, but additional layouts can be added. it also need nicer styling.
+this is still a work-in-progress. use this to test out your keyboard or your PCB. currently this only supports only ANSI, but additional layouts can be added. still in need of design, but fully workable. might contain some bugs.
 
 ```
 # run it like this:
