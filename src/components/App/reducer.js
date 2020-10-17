@@ -20,7 +20,7 @@ export function reducer(state = initialState, action) {
       } else {
         return state;
       }
-    case "RESET_PRISTINE":
+    case "RESET_KEYS_PRISTINE":
       return {
         ...state,
         keys: initialKeysState,
