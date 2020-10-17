@@ -5,8 +5,6 @@ import { Provider } from "react-redux";
 import { KeebChecker } from "components/KeebChecker";
 import { reducer } from "./reducer";
 
-import "./style.css";
-
 const store = createStore(reducer);
 
 export function App() {

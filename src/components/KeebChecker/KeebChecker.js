@@ -1,15 +1,19 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { createUseStyles } from "react-jss";
 import { useDetectKeypress, Layouts, resetKeysPristine } from "components/App";
 import KeyRow from "components/KeyRow";
 import KeyPress from "components/KeyPress";
 
-import "./style.css";
+const useKeebCheckerStyles = createUseStyles({
+  row: { display: "flex" },
+});
 
 export function KeebChecker() {
   const [code, key] = useDetectKeypress();
   const keys = useSelector((store) => store.keys);
   const dispatch = useDispatch();
+  const keebCheckerClasses = useKeebCheckerStyles();
 
   const keyboard = Layouts.ANSI.map((row, rowIndex) =>
     row.map((element, elementIndex) => {
@@ -38,7 +42,7 @@ export function KeebChecker() {
 
   return (
     <React.Fragment>
-      <div className="row">
+      <div className={keebCheckerClasses.row}>
         <textarea></textarea>
         <KeyPress code={code} value={key} />
       </div>

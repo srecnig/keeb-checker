@@ -2,6 +2,10 @@ import React from "react";
 import { createUseStyles } from "react-jss";
 import { useDispatch } from "react-redux";
 import { resetKey } from "components/App/actions";
+import {
+  useUnitStyles,
+  convertSizeToClass,
+} from "components/KeebChecker/useUnitStyles";
 
 const useKeyStyles = createUseStyles({
   key: {
@@ -40,18 +44,18 @@ const useKeyStyles = createUseStyles({
 
 export function Key({ keyCode, label, size = "1U", status = "pristine" }) {
   const dispatch = useDispatch();
+  const unitClasses = useUnitStyles({ baseU: 4 });
   const keyClasses = useKeyStyles({ baseU: 4 });
-  const boxClass = `${keyClasses.key} element--${convertSizeToClass(size)}`;
+  const boxClass = `${keyClasses.key} ${
+    unitClasses["element--" + convertSizeToClass(size)]
+  }`;
   const keyClass = `${keyClasses.key__inner} ${
     keyClasses["key__inner--" + status]
   }`;
+
   return (
     <div className={boxClass} onClick={() => dispatch(resetKey(keyCode))}>
       <div className={keyClass}>{label}</div>
     </div>
   );
-}
-
-function convertSizeToClass(size) {
-  return size.replace(".", "_");
 }
